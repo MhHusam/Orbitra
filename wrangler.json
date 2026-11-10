@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "orbitra-demo",
+  "compatibility_date": "2025-04-15",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "orbitra",
+      "database_id": "0",
+      "migrations_dir": "drizzle"
+    }
+  ]
+}
