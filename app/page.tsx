@@ -3,14 +3,13 @@ import { DemoIntro } from "@/app/components/demo/DemoIntro";
 import { DemoForm } from "@/app/components/demo/DemoForm";
 import { DemoPreviewScroller } from "@/app/components/demo/DemoPreviewScroller";
 import { Icon } from "@/app/components/ui/Icon";
-import { SITE_URL } from "@/lib/motion";
+import { BASE_PATH, SITE_URL } from "@/lib/motion";
 
 export const metadata: Metadata = {
   title: "Book a demo · Orbitra",
   description: "Book a 30-minute Orbitra demo and see instant lead routing on your own leads.",
 };
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const POINTS = [
   "30 minutes with a product specialist",
@@ -29,7 +28,7 @@ export default function DemoPage() {
         <nav aria-label="Main" className="mx-auto flex h-[72px] max-w-[1200px] items-center justify-between px-4 md:px-8">
           <a href={SITE_URL} className="flex items-center gap-2.5 rounded-md font-display text-[20px] font-bold text-ink focus-visible:shadow-[var(--shadow-focus)] focus-visible:outline-none">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`${basePath}/logo-mark.svg`} alt="" width={28} height={28} />
+            <img src={`${BASE_PATH}/logo-mark.svg`} alt="" width={28} height={28} />
             Orbitra
           </a>
           <a href={SITE_URL} className="flex items-center gap-1.5 text-small font-medium text-muted hover:text-ink">

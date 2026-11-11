@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, type FocusEvent } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
-import { basePath, prefersReducedMotion, SITE_URL } from "@/lib/motion";
+import { BASE_PATH, prefersReducedMotion, SITE_URL } from "@/lib/motion";
 import {
   EMPTY, STEPS, firstError, isVisible, stepOf, toInput, validateStep,
   type Errors, type FieldName, type FormValues,
@@ -158,7 +158,7 @@ export function DemoForm() {
     idempotencyKey.current ||= crypto.randomUUID();
 
     try {
-      const res = await fetch(`${basePath()}/api/leads`, {
+      const res = await fetch(`${BASE_PATH}/api/leads`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Idempotency-Key": idempotencyKey.current },
         body: JSON.stringify({ ...toInput(values), [HONEYPOT]: honeypot.current?.value ?? "" }),
