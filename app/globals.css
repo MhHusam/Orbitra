@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ink: #0b1020;
+  --color-ink-2: #161b2e;
+  --color-primary: #5b5bf6;
+  --color-primary-dark: #4646de;
+  --color-primary-soft: #eeeefe;
+  --color-accent: #22d3a6;
+  --color-surface: #f5f6fa;
+  --color-muted: #5b6170;
+  --color-error: #cd2b31;
+  --color-error-soft: #fdeeee;
+  --color-border: #e3e5ec;
+  --color-muted-on-dark: #a9aec4;
+  --color-border-on-dark: #262c44;
+
+  --text-display: 64px;  --text-display--line-height: 70px;
+  --text-h2: 44px;       --text-h2--line-height: 52px;
+  --text-h3: 28px;       --text-h3--line-height: 36px;
+  --text-h4: 20px;       --text-h4--line-height: 28px;
+  --text-body-l: 20px;   --text-body-l--line-height: 30px;
+  --text-body: 16px;     --text-body--line-height: 26px;
+  --text-small: 14px;    --text-small--line-height: 22px;
+  --text-label: 14px;    --text-label--line-height: 20px;
+  --text-eyebrow: 13px;  --text-eyebrow--line-height: 16px;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-focus: 0 0 0 4px rgb(91 91 246 / 0.22);
+  --shadow-card: 0 12px 32px 0 rgb(10 15 33 / 0.06);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  color: var(--color-ink);
+  background: var(--color-surface);
 }
