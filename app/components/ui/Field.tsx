@@ -110,3 +110,17 @@ export function SelectField({
     </FieldWrapper>
   );
 }
+
+type TextAreaFieldProps = Omit<ComponentProps<"textarea">, "id"> & FieldProps;
+
+export function TextAreaField({ id, label, error, hint, className = "", ...props }: TextAreaFieldProps) {
+  return (
+    <FieldWrapper {...{ id, label, error, hint, className }}>
+      <textarea
+        {...props}
+        {...ariaProps(id, error)}
+        className={`${base} ${error ? styles.error : styles.default} min-h-28 resize-y`}
+      />
+    </FieldWrapper>
+  );
+}

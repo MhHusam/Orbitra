@@ -37,23 +37,32 @@ export function ChoiceGroup({
   legend,
   error,
   errorId,
+  hint,
   children,
-}: {
+  className = "",
+  ...fieldset
+}: Omit<ComponentProps<"fieldset">, "children"> & {
   legend: string;
   error?: string;
   errorId: string;
+  hint?: React.ReactNode;
   children: React.ReactNode;
 }) {
   return (
-    <fieldset className="flex flex-col gap-2.5" aria-describedby={error ? errorId : undefined}>
+    <fieldset
+      {...fieldset}
+      className={`flex min-w-0 flex-col gap-2.5 ${className}`}
+      aria-invalid={error ? true : undefined}
+      aria-describedby={error ? errorId : undefined}
+    >
       <legend className="mb-2.5 text-label font-medium text-ink">{legend}</legend>
       <div className="flex flex-wrap gap-2.5">{children}</div>
-      {error && (
+      {error ? (
         <p id={errorId} role="alert" className="flex items-start gap-1.5 text-small text-error">
           <Icon name="alert" size={16} className="mt-[3px]" />
           <span>{error}</span>
         </p>
-      )}
+      ) : hint}
     </fieldset>
   );
 }

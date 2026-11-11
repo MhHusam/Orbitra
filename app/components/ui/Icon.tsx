@@ -1,6 +1,6 @@
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-export type IconName = "alert" | "chevron-down" | "check" | "calendar" | "refresh" | "wifi-off" | "x";
+export type IconName = "alert" | "chevron-down" | "check" | "calendar" | "refresh" | "wifi-off" | "x" | "arrow-left" | "arrow-right" | "zap" | "users" | "gauge" | "bell" | "database" | "clock";
 
 export function Icon({ name, size = 20, className = "" }: { name: IconName; size?: number; className?: string }) {
   const url = `url(${basePath}/icons/${name}.svg)`;
